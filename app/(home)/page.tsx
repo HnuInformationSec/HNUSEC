@@ -14,10 +14,7 @@ export default function HomePage() {
         {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-fd-background via-transparent to-fd-background/50" />
         
-        {/* Floating elements */}
-        <div className="absolute top-20 left-10 w-2 h-2 bg-fd-primary/20 rounded-full animate-pulse"></div>
-        <div className="absolute top-40 right-20 w-3 h-3 bg-fd-primary/15 rounded-full animate-pulse delay-1000"></div>
-        <div className="absolute bottom-32 left-20 w-1.5 h-1.5 bg-fd-primary/25 rounded-full animate-pulse delay-500"></div>
+
 
         <div className="relative container mx-auto px-6 text-center">
           <div className="flex flex-col items-center space-y-12">
