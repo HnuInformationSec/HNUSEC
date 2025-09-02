@@ -68,7 +68,7 @@ export default function HomePage() {
       </section>
 
             {/* Features section */}
-      <section className="py-32 bg-fd-muted/30">
+      <section className="py-32 bg-fd-background">
         <div className="container mx-auto px-6">
           <div className="text-center mb-20">
             <h3 className="text-4xl md:text-5xl font-bold mb-6 text-fd-foreground">旅程的开始</h3>
