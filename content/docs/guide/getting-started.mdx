@@ -1,0 +1,46 @@
+---
+title: Getting Started
+description: 加入 HNUSEC 与开始贡献的快速指南
+---
+
+# Getting Started
+
+欢迎加入 HNUSEC！这里是快速上手指南，帮助你尽快熟悉协会与本网站的内容贡献流程。
+
+## 入群与沟通
+
+- 校内社群：加入协会 [QQ群](https://qm.qq.com/q/JSaru1wB4C)，关注活动公告。
+- GitHub：Star & Watch 本仓库，关注更新。
+
+## 本地环境
+
+```bash
+git clone https://github.com/HnuInformationSec/HNUSEC
+cd HNUSEC
+npm install
+npm run dev
+```
+
+开发后访问 http://localhost:3000 查看页面。
+
+## 提交文章
+
+- 在 `content/docs/` 目录下新增 MDX 文件。
+- 文件顶部添加 frontmatter：
+
+```mdx
+---
+title: 文章标题
+description: 文章描述
+---
+```
+
+- 在对应模块的 `meta.json` 中注册，设置 `display` 与 `order`。
+
+更多细节见仓库根目录的 `README.md`。
+
+## 进一步
+
+- 想和大家交换友链？访问 `/friends` 页面。
+- 想完善指南？欢迎提 PR 或在 Issue 区讨论。
+

@@ -20,7 +20,7 @@ const friends: Friend[] = [
     description: 'Be wise and fool.',
   },
   {
-    name: "Moyuin's blog",
+    name: "Moyuin's Blog",
     url: 'https://moyuin.top/',
     avatar: '/avatars/moyuin.jpeg',
     description: 'Floating Or Hovering.',
@@ -65,7 +65,7 @@ export default function FriendsPage() {
 
       <div className="mt-10 text-sm text-fd-muted-foreground">
         <span>
-          想要交换友链？欢迎在 GitHub 提交 PR 或联系站长。
+          想要提交友链？欢迎在 GitHub 提交 PR 或联系 HNUSEC ～
         </span>
         <span className="ml-2">
           <Link className="text-fd-primary hover:underline" href="/docs/guide">返回文档</Link>
