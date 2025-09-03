@@ -31,10 +31,16 @@ export function baseOptions(): BaseLayoutProps {
     // see https://fumadocs.dev/docs/ui/navigation/links
     links: [
       {
-        type: 'main', 
+        type: 'main',
         text: 'Guide',
         url: '/docs/guide',
         active: 'nested-url',
+      },
+      {
+        type: 'main',
+        text: 'Friends',
+        url: '/friends',
+        active: 'url',
       },
     ],
     githubUrl: 'https://github.com/HnuInformationSec/HNUCTF2025',

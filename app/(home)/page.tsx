@@ -107,7 +107,7 @@ export default function HomePage() {
                 汇聚已经毕业的优秀学长学姐的博客
               </p>
               <Link 
-                href="/docs/guide/friends"
+                href="/friends"
                 className="inline-flex items-center text-fd-primary font-medium hover:underline group-hover:gap-2 transition-all"
               >
                 查看更多 

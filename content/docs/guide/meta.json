@@ -7,10 +7,6 @@
   "getting-started": {
     "display": "Getting Started",
     "order": 2
-  },
-  "friends": {
-    "display": "友情链接",
-    "order": 3
   }
 }
 
