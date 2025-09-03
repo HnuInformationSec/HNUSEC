@@ -1,12 +1,8 @@
 {
-  "title": "Guide",
+  "title": "Hello,World!",
   "index": {
     "display": "Introduction",
     "order": 1
-  },
-  "getting-started": {
-    "display": "Getting Started",
-    "order": 2
   }
 }
 

@@ -1,50 +1,67 @@
+'use client';
+
 import Link from 'next/link';
+import { friends, type Friend } from '@/config/friends';
+import { useState } from 'react';
 
-export const metadata = {
-  title: '友情链接',
-  description: 'HNUSEC 的友情链接',
-};
+const grades = ['2024级', '2023级', '2022级', '2021级', '2020级', '其他'] as const;
 
-type Friend = {
-  name: string;
-  url: string;
-  avatar: string;
-  description: string;
-};
-
-const friends: Friend[] = [
-  {
-    name: "Hanyin's Space",
-    url: 'https://mundi-xu.github.io/',
-    avatar: '/avatars/hanyin.jpg',
-    description: 'Be wise and fool.',
-  },
-  {
-    name: "Moyuin's Blog",
-    url: 'https://moyuin.top/',
-    avatar: '/avatars/moyuin.jpeg',
-    description: 'Floating Or Hovering.',
-  },
-];
-
-function FriendCard({ name, url, avatar, description }: Friend) {
+function FriendCard({ name, url, avatar, description, tags, bio }: Friend) {
   return (
     <a href={url} target="_blank" rel="noopener noreferrer" className="block group">
-      <div className="flex items-center p-4 bg-fd-card rounded-xl border border-fd-border shadow-sm hover:shadow-md transition-shadow duration-200">
-        <div className="flex-shrink-0 w-16 h-16 rounded-full overflow-hidden border-2 border-fd-border flex items-center justify-center">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={avatar}
-            alt={name}
-            className="w-auto h-auto max-w-full max-h-full"
-            style={{ width: 'auto', height: 'auto', maxWidth: '100%', maxHeight: '100%' }}
-            width={64}
-            height={64}
-          />
-        </div>
-        <div className="ml-4">
-          <h3 className="font-semibold text-fd-foreground group-hover:text-fd-primary transition-colors">{name}</h3>
-          <p className="text-sm text-fd-muted-foreground mt-1">{description}</p>
+      <div className="p-6 bg-fd-card rounded-xl border border-fd-border shadow-sm hover:shadow-md transition-all duration-200">
+        <div className="flex items-start gap-4">
+          <div className="flex-shrink-0 w-12 h-12 rounded-full overflow-hidden border-2 border-fd-border flex items-center justify-center bg-fd-muted">
+            {avatar ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={avatar}
+                alt={name}
+                className="w-full h-full object-cover"
+                width={48}
+                height={48}
+              />
+            ) : (
+              <div className="w-full h-full bg-fd-primary/10 flex items-center justify-center">
+                <span className="text-fd-primary text-lg font-bold">
+                  {name.charAt(0)}
+                </span>
+              </div>
+            )}
+          </div>
+          
+          <div className="flex-1 min-w-0">
+            <div className="flex items-center gap-2 mb-2">
+              <h3 className="font-semibold text-fd-foreground group-hover:text-fd-primary transition-colors truncate">
+                {name}
+              </h3>
+              <div className="flex gap-1 flex-wrap">
+                {tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="px-2 py-1 text-xs rounded-full bg-fd-primary/10 text-fd-primary"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+            
+            {bio && (
+              <p className="text-sm text-fd-muted-foreground mb-2">{bio}</p>
+            )}
+            
+            <p className="text-sm text-fd-muted-foreground italic">
+              {description}
+            </p>
+            
+            <div className="mt-3 flex items-center text-xs text-fd-primary group-hover:underline">
+              访问博客
+              <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </div>
+          </div>
         </div>
       </div>
     </a>
@@ -52,24 +69,88 @@ function FriendCard({ name, url, avatar, description }: Friend) {
 }
 
 export default function FriendsPage() {
-  return (
-    <main className="container mx-auto px-6 py-10">
-      <h1 className="text-3xl font-bold">友情链接</h1>
-      <p className="text-fd-muted-foreground mt-2">这里是一些优秀学长学姐的个人网站和博客。</p>
+  const [selectedGrade, setSelectedGrade] = useState<string>('全部');
+  
+  const filteredFriends = selectedGrade === '全部' 
+    ? friends 
+    : friends.filter(friend => friend.grade === selectedGrade);
+    
+  const friendsByGrade = grades.reduce((acc, grade) => {
+    acc[grade] = friends.filter(friend => friend.grade === grade);
+    return acc;
+  }, {} as Record<string, Friend[]>);
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-        {friends.map((f) => (
-          <FriendCard key={f.url} {...f} />
-        ))}
+  return (
+    <main className="container mx-auto px-6 py-10 max-w-6xl">
+      {/* Header */}
+      <div className="text-center mb-10">
+        <h1 className="text-4xl font-bold mb-4">学长学姐们的博客</h1>
+        <p className="text-lg text-fd-muted-foreground">
+          这里不仅仅只有安全，也许你能在这里与某位学长学姐共鸣，找到你所喜欢的方向✨
+        </p>
       </div>
 
-      <div className="mt-10 text-sm text-fd-muted-foreground">
-        <span>
-          想要提交友链？欢迎在 GitHub 提交 PR 或联系 HNUSEC ～
-        </span>
-        <span className="ml-2">
-          <Link className="text-fd-primary hover:underline" href="/docs/guide">返回文档</Link>
-        </span>
+      {/* Grade Filter */}
+      <div className="flex justify-center mb-8">
+        <div className="inline-flex p-1 bg-fd-muted/30 rounded-xl">
+          {['全部', ...grades].map((grade) => (
+            <button
+              key={grade}
+              onClick={() => setSelectedGrade(grade)}
+              className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                selectedGrade === grade
+                  ? 'bg-fd-primary text-fd-primary-foreground shadow-sm'
+                  : 'text-fd-muted-foreground hover:text-fd-foreground'
+              }`}
+            >
+              {grade}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Content */}
+      {selectedGrade === '全部' ? (
+        // Show by grade groups
+        <div className="space-y-10">
+          {grades.map((grade) => {
+            const gradeMembers = friendsByGrade[grade];
+            if (gradeMembers.length === 0) return null;
+            
+            return (
+              <div key={grade}>
+                <div className="flex items-center mb-6">
+                  <div className="px-4 py-2 bg-fd-primary/10 text-fd-primary rounded-lg font-medium">
+                    {grade}
+                  </div>
+                </div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {gradeMembers.map((friend) => (
+                    <FriendCard key={friend.url} {...friend} />
+                  ))}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      ) : (
+        // Show filtered results
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {filteredFriends.map((friend) => (
+            <FriendCard key={friend.url} {...friend} />
+          ))}
+        </div>
+      )}
+
+      {/* Footer */}
+      <div className="mt-16 text-center text-sm text-fd-muted-foreground">
+        <p className="mb-2">
+          想要提交链接？欢迎在 GitHub 提交 PR 或联系 HNUSEC ～
+        </p>
+        <Link className="text-fd-primary hover:underline" href="/docs/guide">
+          返回文档
+        </Link>
       </div>
     </main>
   );

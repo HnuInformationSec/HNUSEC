@@ -38,7 +38,7 @@ export function baseOptions(): BaseLayoutProps {
       },
       {
         type: 'main',
-        text: 'Friends',
+        text: 'Links',
         url: '/friends',
         active: 'url',
       },

@@ -7,20 +7,17 @@ Just for Fun✨
 ## 如何提交文章
 
 ### 文章结构
-
 所有文档都位于 `content/docs/` 目录下，使用 MDX 格式编写。
 
 ### 提交步骤
 
 1. **Fork 本仓库**
-
    ```bash
    git clone https://github.com/HnuInformationSec/HNUSEC
    cd HNUSEC
    ```
 
 2. **创建新的模块目录**（如果需要）
-
    ```bash
    # 复制现有的 guide 模块作为模板
    cp -r content/docs/guide content/docs/your-module-name
@@ -29,7 +26,6 @@ Just for Fun✨
 3. **编写文章**
    - 在对应模块目录下创建 `.mdx` 文件
    - 文件顶部添加 frontmatter：
-
      ```yaml
      ---
      title: 文章标题
@@ -39,7 +35,6 @@ Just for Fun✨
 
 4. **更新目录结构**
    - 编辑模块下的 `meta.json` 文件，添加新文章的配置：
-
      ```json
      {
        "title": "模块名称",
@@ -51,7 +46,6 @@ Just for Fun✨
      ```
 
 5. **提交 Pull Request**
-
    ```bash
    git add .
    git commit -m "feat: 添加新文章 - 文章标题"
@@ -59,44 +53,71 @@ Just for Fun✨
    ```
 
 ### 文章规范
-
 - 使用 MDX 格式，支持 React 组件
 - 文件名使用小写字母和连字符（kebab-case）
 - 图片放在 `public/` 目录下
 - 代码块请注明语言类型
 
-## 本地开发
+## 如何添加链接
 
-```bash
-npm install
-npm run dev
+链接现在通过配置文件管理，支持年级分组、标签分类等丰富功能。
+
+### 数据结构
+
+```typescript
+interface Friend {
+  name: string;           // 姓名
+  url: string;            // 博客链接
+  avatar?: string;        // 头像图片（可选）
+  description: string;    // 描述
+  grade: '2024级' | '2023级' | '2022级' | '2021级' | '2020级' | '其他';
+  tags: string[];         // 技术标签
+  bio?: string;          // 个人简介（可选）
+}
 ```
 
-访问 <http://localhost:3000> 查看效果。
+### 添加步骤
 
-## 依赖更新
+1. **编辑配置文件** `config/friends.ts`：
+   ```typescript
+   export const friends: Friend[] = [
+     // 现有链接...
+     {
+       name: "你的姓名",
+       url: "https://your-blog.com",
+       avatar: "/avatars/your-avatar.jpg", // 可选
+       description: "你的个性签名",
+       grade: "2024级",
+       tags: ["Web", "AI", "Security"], // 你的技术方向
+       bio: "简短的个人介绍" // 可选
+     }
+   ];
+   ```
 
-项目会定期自动检查依赖更新并通过 GitHub Actions 自动创建 PR。您也可以手动检查和更新依赖：
+2. **添加头像图片**（可选）：
+   - 将头像图片放在 `public/avatars/` 目录
+   - 推荐尺寸：48×48 像素
+   - 支持格式：jpg, png, webp
+
+3. **提交 Pull Request**：
+   ```bash
+   git add config/friends.ts public/avatars/your-avatar.jpg
+   git commit -m "feat: 添加友情链接 - 你的姓名"
+   git push origin main
+   ```
+
+### 注意事项
+- 如果不提供 `avatar`，会自动生成首字母头像
+- `description` 建议控制在 30 字以内
+- 确保链接有效且内容健康
+
+
 
 ```bash
 # 使用 npm-check-updates 直接更新
 npx npm-check-updates -u
 npm install
+npm run dev
 ```
 
-## 友链
-欢迎提交～
-- 头像：将头像图片放在 `HNUSEC/public/avatars/`。
-- 新增条目：编辑 `HNUSEC/app/friends/page.tsx`，在文件顶部的 `friends` 数组中追加对象：
-
-  ```ts
-  {
-    name: "Your Name",
-    url: "https://xxxx.com/",
-    avatar: "/avatars/xxx.jpg",
-    description: "Your Description",
-  }
-  ```
-
-- 排序：按数组顺序渲染，靠前的会先显示。
-- 预览：运行 `npm run dev` 后访问 <http://localhost:3000/friends> 可检查效果。
+访问 http://localhost:3000 查看效果。
