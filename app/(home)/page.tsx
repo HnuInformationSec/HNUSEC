@@ -104,10 +104,10 @@ export default function HomePage() {
                 <h4 className="text-2xl font-semibold text-fd-card-foreground">友情链接</h4>
               </div>
               <p className="text-fd-muted-foreground mb-6 text-lg leading-relaxed">
-                汇聚已经毕业的优秀学长学姐的博客
+                汇聚一些优秀学长学姐的个人网站和博客。
               </p>
               <Link 
-                href="/docs/guide/friends"
+                href="/friends"
                 className="inline-flex items-center text-fd-primary font-medium hover:underline group-hover:gap-2 transition-all"
               >
                 查看更多 
