@@ -106,9 +106,15 @@ export default function HomePage() {
               <p className="text-fd-muted-foreground mb-6 text-lg leading-relaxed">
                 汇聚已经毕业的优秀学长学姐的博客
               </p>
-              <span className="text-fd-muted-foreground font-medium">
-                即将推出 →
-              </span>
+              <Link 
+                href="/docs/guide/friends"
+                className="inline-flex items-center text-fd-primary font-medium hover:underline group-hover:gap-2 transition-all"
+              >
+                查看更多 
+                <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </Link>
             </div>
             
             <div className="group p-10 bg-fd-card rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-3 transition-all duration-300 border border-fd-border">
