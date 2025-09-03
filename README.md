@@ -83,3 +83,20 @@ npm run dev
 npx npm-check-updates -u
 npm install
 ```
+
+## 友链
+欢迎提交～
+- 头像：将头像图片放在 `HNUSEC/public/avatars/`。
+- 新增条目：编辑 `HNUSEC/app/friends/page.tsx`，在文件顶部的 `friends` 数组中追加对象：
+
+  ```ts
+  {
+    name: "Your Name",
+    url: "https://xxxx.com/",
+    avatar: "/avatars/xxx.jpg",
+    description: "Your Description",
+  }
+  ```
+
+- 排序：按数组顺序渲染，靠前的会先显示。
+- 预览：运行 `npm run dev` 后访问 <http://localhost:3000/friends> 可检查效果。
