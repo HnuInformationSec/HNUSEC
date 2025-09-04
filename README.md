@@ -130,4 +130,16 @@ interface Friend {
 - `description` 建议控制在 30 字以内
 - 确保链接有效且内容健康
 
+## 本地测试
+
+在提交任何更改之前，建议在本地测试您的更改：
+
+```bash
+# 安装依赖
+npm install
+
+# 启动开发服务器
+npm run dev
+```
+
 访问 <http://localhost:3000> 查看效果。
