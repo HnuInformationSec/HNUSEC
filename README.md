@@ -7,17 +7,20 @@ Just for Fun✨
 ## 如何提交文章
 
 ### 文章结构
+
 所有文档都位于 `content/docs/` 目录下，使用 MDX 格式编写。
 
 ### 提交步骤
 
 1. **Fork 本仓库**
+
    ```bash
    git clone https://github.com/HnuInformationSec/HNUSEC
    cd HNUSEC
    ```
 
 2. **创建新的模块目录**（如果需要）
+
    ```bash
    # 复制现有的 guide 模块作为模板
    cp -r content/docs/guide content/docs/your-module-name
@@ -26,6 +29,7 @@ Just for Fun✨
 3. **编写文章**
    - 在对应模块目录下创建 `.mdx` 文件
    - 文件顶部添加 frontmatter：
+
      ```yaml
      ---
      title: 文章标题
@@ -35,6 +39,7 @@ Just for Fun✨
 
 4. **更新目录结构**
    - 编辑模块下的 `meta.json` 文件，添加新文章的配置：
+
      ```json
      {
        "title": "模块名称",
@@ -46,21 +51,32 @@ Just for Fun✨
      ```
 
 5. **提交 Pull Request**
+
    ```bash
    git add .
    git commit -m "feat: 添加新文章 - 文章标题"
    git push origin main
    ```
 
+   可选：在提交前使用markdownlint格式化文档
+
+   ```bash
+   # 检查格式问题
+   npm run lint:md
+   
+   # 自动修复格式问题
+   npm run fix:md
+   ```
+
 ### 文章规范
+
 - 使用 MDX 格式，支持 React 组件
 - 文件名使用小写字母和连字符（kebab-case）
 - 图片放在 `public/` 目录下
-- 代码块请注明语言类型
 
-## 如何添加链接
+## 如何添加友链
 
-链接现在通过配置文件管理，支持年级分组、标签分类等丰富功能。
+友链现在通过配置文件管理，支持年级分组、标签分类等丰富功能。
 
 ### 数据结构
 
@@ -79,11 +95,12 @@ interface Friend {
 ### 添加步骤
 
 1. **编辑配置文件** `config/friends.ts`：
+
    ```typescript
    export const friends: Friend[] = [
      // 现有链接...
      {
-       name: "你的姓名",
+       name: "博客名称",
        url: "https://your-blog.com",
        avatar: "/avatars/your-avatar.jpg", // 可选
        description: "你的个性签名",
@@ -100,24 +117,17 @@ interface Friend {
    - 支持格式：jpg, png, webp
 
 3. **提交 Pull Request**：
+
    ```bash
    git add config/friends.ts public/avatars/your-avatar.jpg
-   git commit -m "feat: 添加友情链接 - 你的姓名"
+   git commit -m "feat: 添加友情链接 - 博客名称"
    git push origin main
    ```
 
 ### 注意事项
+
 - 如果不提供 `avatar`，会自动生成首字母头像
 - `description` 建议控制在 30 字以内
 - 确保链接有效且内容健康
 
-
-
-```bash
-# 使用 npm-check-updates 直接更新
-npx npm-check-updates -u
-npm install
-npm run dev
-```
-
-访问 http://localhost:3000 查看效果。
+访问 <http://localhost:3000> 查看效果。
