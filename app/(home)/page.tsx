@@ -101,7 +101,7 @@ export default function HomePage() {
             <div className="group p-10 bg-fd-card rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-3 transition-all duration-300 border border-fd-border">
               <div className="flex items-center mb-6">
                 <div className="w-3 h-3 bg-fd-primary rounded-full mr-3"></div>
-                <h4 className="text-2xl font-semibold text-fd-card-foreground">链接</h4>
+                <h4 className="text-2xl font-semibold text-fd-card-foreground">友链</h4>
               </div>
               <p className="text-fd-muted-foreground mb-6 text-lg leading-relaxed">
                 汇聚一些优秀学长学姐的个人网站和博客， 也许你能从此之中找到热爱的方向。
@@ -115,6 +115,25 @@ export default function HomePage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
                 </Link>
+            </div>
+            
+            <div className="group p-10 bg-fd-card rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-3 transition-all duration-300 border border-fd-border">
+              <div className="flex items-center mb-6">
+                <div className="w-3 h-3 bg-fd-primary rounded-full mr-3"></div>
+                <h4 className="text-2xl font-semibold text-fd-card-foreground">大模型安全</h4>
+              </div>
+              <p className="text-fd-muted-foreground mb-6 text-lg leading-relaxed">
+                探索大语言模型的安全威胁与防护技术。
+              </p>
+              <Link 
+                href="/docs/llm-security"
+                className="inline-flex items-center text-fd-primary font-medium hover:underline group-hover:gap-2 transition-all"
+              >
+                了解更多 
+                <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </Link>
             </div>
             
             <div className="group p-10 bg-fd-card rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-3 transition-all duration-300 border border-fd-border">
