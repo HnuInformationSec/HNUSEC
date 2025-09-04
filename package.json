@@ -7,8 +7,8 @@
     "dev": "next dev --turbo",
     "start": "next start",
     "postinstall": "fumadocs-mdx",
-    "lint:md": "markdownlint **/*.md",
-    "fix:md": "markdownlint --fix **/*.md"
+    "lint:md": "markdownlint **/*.md --ignore node_modules",
+    "fix:md": "markdownlint --fix **/*.md --ignore node_modules"
   },
   "dependencies": {
     "fumadocs-core": "15.7.8",
