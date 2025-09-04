@@ -15,9 +15,9 @@ export const friends: Friend[] = [
     url: "https://mundi-xu.github.io/",
     avatar: "/avatars/hanyin.jpg",
     description: "Be wise and fool.",
-    grade: "其他",
-    tags: ["Security", "AI"],
-    bio: "天穹安全实验室"
+    grade: "2022级",
+    tags: ["Security", "LLM", "Binary"],
+    bio: "天穹光年实验室"
   },
   {
     name: "Moyuin",
