@@ -101,7 +101,7 @@ export default function HomePage() {
             <div className="group p-10 bg-fd-card rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-3 transition-all duration-300 border border-fd-border">
               <div className="flex items-center mb-6">
                 <div className="w-3 h-3 bg-fd-primary rounded-full mr-3"></div>
-                <h4 className="text-2xl font-semibold text-fd-card-foreground">链接</h4>
+                <h4 className="text-2xl font-semibold text-fd-card-foreground">友链</h4>
               </div>
               <p className="text-fd-muted-foreground mb-6 text-lg leading-relaxed">
                 汇聚一些优秀学长学姐的个人网站和博客， 也许你能从此之中找到热爱的方向。
