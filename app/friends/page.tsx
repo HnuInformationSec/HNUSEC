@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { friends, type Friend } from '@/config/friends';
 import { useState } from 'react';
 
-const grades = ['2024级', '2023级', '2022级', '2021级', '2020级', '其他'] as const;
+const grades = ['2025级', '2024级', '2023级', '2022级', '2021级', 'Veteran'] as const;
 
 function FriendCard({ name, url, avatar, description, tags, bio }: Friend) {
   return (
