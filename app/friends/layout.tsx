@@ -3,8 +3,8 @@ import { HomeLayout } from 'fumadocs-ui/layouts/home';
 import { baseOptions } from '@/lib/layout.shared';
 
 export const metadata: Metadata = {
-  title: '链接',
-  description: '一些学长学姐的博客，也许你会在其中找到你想要的路',
+  title: '友链',
+  description: '一些同学的想法，也许你会在其中找到你想要的路',
 };
 
 export default function FriendsLayout({

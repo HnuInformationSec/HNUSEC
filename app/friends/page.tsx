@@ -84,9 +84,9 @@ export default function FriendsPage() {
     <main className="container mx-auto px-6 py-10 max-w-6xl">
       {/* Header */}
       <div className="text-center mb-10">
-        <h1 className="text-4xl font-bold mb-4">学长学姐们的博客</h1>
+        <h1 className="text-4xl font-bold mb-4">思想广场</h1>
         <p className="text-lg text-fd-muted-foreground">
-          这里不仅仅只有安全，也许你能在这里与某位学长学姐共鸣，找到你所喜欢的方向✨
+          这里不仅仅只有安全，也许你能在这里因某一个想法而共鸣，找到你所喜欢的方向✨
         </p>
       </div>
 

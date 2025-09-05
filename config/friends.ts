@@ -3,7 +3,7 @@ export interface Friend {
   url: string;
   avatar?: string;
   description: string;
-  grade: '2024级' | '2023级' | '2022级' | '2021级' | '2020级' | '其他';
+  grade: "2025级" | "2024级" | "2023级" | "2022级" | "2021级" | "Veteran";
   tags: string[];
   bio?: string; // 个人简介
 }
@@ -15,7 +15,7 @@ export const friends: Friend[] = [
     url: "https://mundi-xu.github.io/",
     avatar: "/avatars/hanyin.jpg",
     description: "Be wise and fool.",
-    grade: "2022级",
+    grade: "Veteran",
     tags: ["Security", "LLM", "Binary"],
     bio: "天穹光年实验室"
   },

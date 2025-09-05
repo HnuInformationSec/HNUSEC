@@ -104,7 +104,7 @@ export default function HomePage() {
                 <h4 className="text-2xl font-semibold text-fd-card-foreground">友链</h4>
               </div>
               <p className="text-fd-muted-foreground mb-6 text-lg leading-relaxed">
-                汇聚一些优秀学长学姐的个人网站和博客， 也许你能从此之中找到热爱的方向。
+                汇聚一些同学的个人网站和博客， 也许你能从此之中找到热爱的方向。
               </p>
                               <Link 
                   href="/friends"
