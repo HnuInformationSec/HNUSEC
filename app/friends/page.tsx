@@ -91,21 +91,25 @@ export default function FriendsPage() {
       </div>
 
       {/* Grade Filter */}
-      <div className="flex justify-center mb-8">
-        <div className="inline-flex p-1 bg-fd-muted/30 rounded-xl">
-          {['全部', ...grades].map((grade) => (
-            <button
-              key={grade}
-              onClick={() => setSelectedGrade(grade)}
-              className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-                selectedGrade === grade
-                  ? 'bg-fd-primary text-fd-primary-foreground shadow-sm'
-                  : 'text-fd-muted-foreground hover:text-fd-foreground'
-              }`}
-            >
-              {grade}
-            </button>
-          ))}
+      <div className="mb-8">
+        <div className="overflow-x-auto scrollbar-hide">
+          <div className="flex justify-center min-w-max px-4">
+            <div className="inline-flex p-1 bg-fd-muted/30 rounded-xl gap-1">
+              {['全部', ...grades].map((grade) => (
+                <button
+                  key={grade}
+                  onClick={() => setSelectedGrade(grade)}
+                  className={`px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all whitespace-nowrap ${
+                    selectedGrade === grade
+                      ? 'bg-fd-primary text-fd-primary-foreground shadow-sm'
+                      : 'text-fd-muted-foreground hover:text-fd-foreground'
+                  }`}
+                >
+                  {grade}
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
 
