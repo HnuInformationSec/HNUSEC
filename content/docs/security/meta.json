@@ -2,6 +2,7 @@
   "title": "Security",
   "pages": [
     "index",
-    "llm-security"
+    "llm-security",
+    "start"
   ]
 }

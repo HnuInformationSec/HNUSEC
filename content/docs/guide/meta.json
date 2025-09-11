@@ -1,9 +1,8 @@
 {
   "title": "Hello,World!",
-  "index": {
-    "display": "Introduction",
-    "order": 1
-  }
+  "pages": [
+    "index"
+  ]
 }
 
 
