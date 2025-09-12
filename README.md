@@ -86,7 +86,7 @@ interface Friend {
   url: string;            // 博客链接
   avatar?: string;        // 头像图片（可选）
   description: string;    // 描述
-  grade: '2024级' | '2023级' | '2022级' | '2021级' | '2020级' | '其他';
+  grade: "2025级" | "2024级" | "2023级" | "2022级" | "2021级" | "Veteran";
   tags: string[];         // 技术标签
   bio?: string;          // 个人简介（可选）
 }
