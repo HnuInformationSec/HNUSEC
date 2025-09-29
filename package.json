@@ -11,7 +11,7 @@
     "fix:md": "markdownlint --fix **/*.md --ignore node_modules"
   },
   "dependencies": {
-    "fumadocs-core": "15.7.10",
+    "fumadocs-core": "15.8.1",
     "fumadocs-mdx": "11.9.0",
     "fumadocs-ui": "15.7.11",
     "next": "15.5.2",
