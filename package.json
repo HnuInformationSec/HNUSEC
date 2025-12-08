@@ -11,12 +11,12 @@
     "fix:md": "markdownlint --fix **/*.md --ignore node_modules"
   },
   "dependencies": {
-    "fumadocs-core": "15.7.10",
-    "fumadocs-mdx": "13.0.2",
+    "fumadocs-core": "16.0.4",
+    "fumadocs-mdx": "11.9.0",
     "fumadocs-ui": "15.7.11",
-    "next": "15.5.2",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "next": "15.5.7",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.13",
@@ -25,7 +25,7 @@
     "@types/react": "^19.1.12",
     "@types/react-dom": "^19.1.9",
     "eslint": "^9.35.0",
-    "eslint-config-next": "15.5.2",
+    "eslint-config-next": "16.0.0",
     "markdownlint-cli": "^0.45.0",
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.13",
