@@ -24,7 +24,7 @@
     "@types/node": "24.9.1",
     "@types/react": "^19.1.12",
     "@types/react-dom": "^19.1.9",
-    "eslint": "^9.35.0",
+    "eslint": "^9.39.1",
     "eslint-config-next": "16.0.0",
     "markdownlint-cli": "^0.45.0",
     "postcss": "^8.5.6",
